@@ -1,0 +1,57 @@
+*.{
+	min-width: 50%;
+	min-height: 50%;
+}
+html{
+	min-width: 50%;
+	min-height: 50%;
+}
+body{
+	min-width: 20%;
+}
+#aboutCompany{
+	display: inline-flex;
+}
+nav {
+
+}
+/* the banner*/
+div #banner{
+	padding: 3px
+	float: left;
+}
+nav #banner .ulForBanner li {
+	display: inline-block;
+	align-items: baseline !important;
+	position: relative;
+
+}
+nav #banner .ulForBanner li a {
+	text-decoration: none;
+	margin-left: 10px;
+	align-items: baseline;
+}
+nav #banner .ulForBanner li .search{
+	width: 400px;
+	background-image: url(../img/search.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	border-radius: 5px;
+	border: 1px solid #bab6b6;	
+	top: 85px;
+}
+
+#container{
+	margin-left: 5%;
+	margin-right: 5%;
+	min-width: 30%;
+}
+#aboutCompany {
+	width: 100%;
+	float: left;
+}
+
+li.centerText{
+ transform: translate(-15px, -20px);
+ margin-left: 3px;
+}
