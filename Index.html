@@ -6,23 +6,102 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/welcomPage.css">
 	<link rel="stylesheet" type="text/css" href="css/modalLogin.css">
+
 </head>
 <body>
 	<div id="container">
 	<header>
 		<nav>
-			<div id="banner">
-				<ul class="ulForBanner">
-					<li class="logo"><a href=""><img src="img/future_test.png" width="100px" height="50px"></a></li>
-					<li class="centerText"><a href="">КАТАЛОГ</a></li>
-					<li class="centerText"><input type="search" class="search" ></li>
-					<li class="centerText"><a href="#">ДОСТАВКА</a></li>
-					<li class="centerText"><a href="#">ОПЛАТА</a></li>
-					<li class="centerText" ><a href="#" id="show-modal" class="btn" data-toggle="modal"> ЛИЧНЫЙ КАБИНЕТ</a></li>
-					<li class="centerText"><a href="aboutUs.html"> О НАС</a></li>
-					<li class="basket"><img src="img/market.png" width="100px;" height="50px;" ></li>
+			<div class="header">
+				<div class="header-left">
+					<a href="/" class="logotype1">                        
+					    <div><b>FUTUR</b>IN</div>
+					    <span>E-COMMERCE</span>
+					</a>
+				</div>
+				<div class="header-midle">
+					<form>
+						<span class="icon"><i class="fa fa-search"></i></span>
+						<input type="text" name="search" class="search" placeholder="Search">
+						
+					</form>
+					
+				<!--	<div id="cover">
+					  <form method="get" action="">
+					    <div class="tb">
+					      <div class="td"><input type="text" placeholder="search" class="search"></div>
+					      <div class="td" id="s-cover">
+					        <button type="submit">
+					          <div id="s-circle"></div>
+					          <span></span>
+					        </button>
+					      </div>
+					    </div>
+					  </form>
+					</div> -->
+				</div>
+				<div class="header-right">
+					<ul class="ulForBanner">
+					<li><a href="">КАТАЛОГ</a></li>
+					<li><a href="#">ДОСТАВКА</a></li>
+					<li><a href="#">ОПЛАТА</a></li>
+					<li><a href="#" id="show-modal" class="btn" data-toggle="modal"> ЛИЧНЫЙ КАБИНЕТ</a></li>
+					<li><a href="aboutUs.html"> О НАС</a></li>
+					<!--<li class="menu-left-responsive" style="font-size:30px;"><a href="#">&#9776;Категория</a>	
+						<ul class="submenu">
+							<li><a href="">КАТАЛОГ</a></li>
+							<li><a href="#">ДОСТАВКА</a></li>
+							<li><a href="#">ОПЛАТА</a></li>
+						</ul>
+
+					</li> -->
+
 				</ul>
+				</div>
+				<span class="category" onclick=" menu()">&#9776;КАТЕГОРИЯ</span>
+				<div class="header-rightHideen" id="rightHeader">
+					<ul class="ulForBanner">
+					<a href="#" class="closebtn" onclick="closeMenu()">&times;</a>
+					<li><a href="#">КАТАЛОГ</a></li>
+					<li><a href="#">ДОСТАВКА</a></li>
+					<li><a href="#">ОПЛАТА</a></li>
+					<li><a href="#" id="show-modal" class="btn" data-toggle="modal"> ЛИЧНЫЙ КАБИНЕТ</a></li>
+					<li><a href="aboutUs.html"> О НАС</a></li>
+					<li class="menu-left-responsive"><a href="#"> Категория</a>	
+						<ul class="submenu">
+							<li><a href="">КАТАЛОГ</a></li>
+							<li><a href="#">ДОСТАВКА</a></li>
+							<li><a href="#">ОПЛАТА</a></li>
+						</ul>
+
+					</li>
+
+				</ul>
+				</div>
 			</div>
+		<!--	<div id="banner">
+
+				<ul class="ulForBanner">
+					<li class="logo"><a href="#"><span>FUTUR></a></li>
+					<li class="centerText menu-responsive"><a href="">КАТАЛОГ</a></li>
+					<li class="centerText search"><input type="search" class="search" ></li>
+					<li class="centerText menu-responsive"><a href="#">ДОСТАВКА</a></li>
+					<li class="centerText menu-responsive" ><a href="#">ОПЛАТА</a></li>
+					<li class="centerText menu-responsive"><a href="#" id="show-modal" class="btn" data-toggle="modal"> ЛИЧНЫЙ КАБИНЕТ</a></li>
+					<li class="centerText menu-responsive"><a href="aboutUs.html"> О НАС</a></li>
+					<li class="basket"><img src="img/market.png" width="100px;" height="50px;" ></li>
+					<li class="menu-left-responsive"><a href="#"> Категория</a>	
+						<ul class="submenu">
+							<li><a href="">КАТАЛОГ</a></li>
+							<li><a href="#">ДОСТАВКА</a></li>
+							<li><a href="#">ОПЛАТА</a></li>
+						</ul>
+
+					</li>
+
+				</ul>
+
+			</div> -->
 			<hr>
 		</nav>
 	</header>
@@ -50,5 +129,7 @@
 	</footer>
 
 	<script type="text/javascript" src="js/loginModal.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+
 </body>
 </html>
