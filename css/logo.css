@@ -1,3 +1,4 @@
+/*
 @import url(https://fonts.googleapis.com/css?family=Russo+One);        
 .logotype1,
 .logotype1:hover,
@@ -76,4 +77,29 @@
     .logotype1:hover:before {
         border:6px solid #1C84D0;
     }
+}
+*/
+.logotype1{
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+     transform: translate(10px,20px);
+}
+.logotype1 b{
+    letter-spacing:1px;
+    font-size:20px;
+    color:#1C84D0;
+    -webkit-text-stroke: 1px #BDE1FF;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+    font-weight: 400;
+    transform: translate(-1px,-12px);
+}
+.logotype1 span {
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.2);
+    display:block;
+    float:right;
+    font-size:10px;
+    color:#579EE6;
+    line-height:10px;
+    bottom: 10px;
 }

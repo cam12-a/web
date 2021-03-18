@@ -64,6 +64,14 @@ header >nav{
     background-image: url(../img/search1.png);
     background-size: 32px;
     border-radius: 50px;
+    transform: translateX(50px);
+    margin-left: 250px;
+}
+.search:focus{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 0px;
 }
 button.btn {
 	height: 32px;
@@ -98,64 +106,91 @@ nav .header-rightHideen{
         position: fixed;
         height: auto;
         z-index: 1;
-        top: 0px;
-        left:0px;
+        top: 10px;
+        left:10px;
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px; 
     }
     nav .category{
         display: block;
-        color: red;
+        color: white;
         top: 10px;
-        transform: translate(1px,10px);
+        transform: translate(1px,11px);
     }
     nav .header-rightHideen .ulForBanner li {
         display: block;
-        margin-left: 20px;
+        margin-left: 10px;
         padding: 1px;
         font-weight: 20px;
     }
      nav .header-rightHideen .ulForBanner{
-        background-color: black;
+        background-color: #0A122A;
         margin-left: auto;
         margin-right: auto;
         float: right;
-        transform: translateY(40px);
+        transform: translateY(22.5px);
+        height: 250px;
+        width: 200px;
+        border-radius: 0px 50px 50px 0px;
      }
     nav .header-rightHideen .ulForBanner li > a{
         text-decoration: none;
         color: black;
     }
-    nav .header-rightHideen .ulForBanner li > a:hover{
-        padding: 1px;
+    nav .header-rightHideen .ulForBanner li  a:hover{
+        padding: 3px;
         font-weight: 20px;
+        color: white;
         
     }
      nav .header-rightHideen .ulForBanner li a {
-       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 25px;
       color: #818181;
       display: block;
       transition: 0.3s;
+      transform: translate(10px,20px);
     }
      nav .header-rightHideen .ulForBanner li a:hover {
       color: #fff;
     }
 
-     a.closebtn {
+     span.closebtn {
       position: absolute;
-      top: 0;
+      top: -10px;
       right: 25px;
       font-size: 36px;
-      margin-left: 250px;
-      color: red;
+      margin-left: 270px;
+      color: white;
+      bottom: 10px;
+
       
+    }
+    .search {
+        margin-left: 0px;
+        transform: translateX(0px);
+    }
+
+}
+@media only screen and (min-device-width: 700px) and (max-device-width: 1024px) {
+
+     .search {
+        margin-left: auto;
+        transform: translateX(0px);
     }
 
 
 }
+@media screen and (max-width: 715px){
+
+     .search {
+        margin-left: 10px;
+        transform: translateX(0px);
+    }
+
+}
+
 
 
 /*
