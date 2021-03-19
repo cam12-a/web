@@ -289,26 +289,28 @@ aside#catalogue{
 
    
 }
-
+/*IPHONE */
 @media screen and (device-aspect-ratio: 375/667) {
     #carousel{
         width: 347px !important;
         min-width: 347px !important;
     }
 }
+/*Iphone 6+*/
 @media screen and (device-aspect-ratio: 16/9) {
     #carousel{
         width: 347px !important;
         min-width: 347px !important;
     }
 }
-
+/*Iphone 5*/
 @media screen and (device-aspect-ratio: 3/4) {
         #carousel{
         width: 750px !important;
         min-width: 750px !important;
     }
 }
+/*IPHONE 6/7/8*/
 @media only screen 
     and (device-width : 375px) 
     and (device-height : 812px) 
@@ -319,7 +321,7 @@ aside#catalogue{
         min-width: 354px !important;
     }
     }
-
+/*Iphone8+ */
     @media only screen 
     and (device-width : 414px) 
     and (device-height : 736px) 
@@ -330,25 +332,224 @@ aside#catalogue{
     }
 
      }
+     /*Ipad pro*/
+     @media only screen 
+      and (min-width: 1024px) 
+      and (max-height: 1366px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 1000px !important ;
+            min-width: 1000px !important;
+        }
+        }
+        /* Surface Duo*/
+     @media only screen 
+      and (min-width: 540px) 
+      and (max-height: 720px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 520px !important ;
+            min-width: 520px !important;
+        }
+        }
+        /* Galaxy Fold*/
+     @media only screen 
+      and (min-width: 280px) 
+      and (max-height: 653px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 260px !important ;
+            min-width: 260px !important;
+        }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-aside#catalogue{
-    display: none !important;
+        /*Iphone 5/SE */
+        @media screen and (device-aspect-ratio: 40/71) {
+     #carousel{
+        width: 300px !important ;
+        min-width: 300px !important;
+    }
 }
+/*---------------------------------------------- Portrai Orientatiom *----------------------------------------------------------/
+     /* Galaxy Fold*/
+    @media only screen 
+      and (min-width: 653px) 
+      and (max-height: 280px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 413px !important ;
+            min-width: 413px !important;
+        }
+            aside#catalogue{
+                 display: inline-block !important;
+            }
+        }
+     /* Surface Duo*/
+     @media only screen 
+      and (min-width: 720px) 
+      and (max-height: 540px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 480px !important ;
+            min-width: 480px !important;
+        }
+        aside#catalogue{
+                 display: inline-block !important;
+            }
+        }
+
+        /*Ipad pro*/
+     @media only screen 
+      and (min-width: 1366px) 
+      and (max-height: 1024px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 1000px !important ;
+            min-width: 1000px !important;
+        }
+        aside#catalogue{
+                 display: inline-block !important;
+                 width: 320px;
+            }
+
+        }
+
+        /*Ipad */
+    @media only screen 
+    and (device-width : 1024px) 
+    and (device-height : 768px) 
+    and (-webkit-device-pixel-ratio : 1.5) {
+         #carousel{
+        width: 320px !important ;
+        min-width: 320px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 200px;
+            }
+
+     }
+
+
+     /*IPHONE X*/
+@media only screen 
+    and (device-width : 812px) 
+    and (device-height : 375px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+
+        #carousel{
+        width: 566px !important ;
+        min-width: 566px !important;
+    }
+    }
+
+    /*Ipad */
+@media screen and (device-aspect-ratio: 4/3) {
+        #carousel{
+        width: 750px !important;
+        min-width: 750px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+}
+/*Iphone8+ */
+    @media only screen 
+    and (device-width : 736px) 
+    and (device-height : 414px) 
+    and (-webkit-device-pixel-ratio : 3) {
+         #carousel{
+        width: 460px !important ;
+        min-width: 460px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+     }
+     /*Iphone 6/7/8 */
+@media screen and (device-aspect-ratio: 667/375) {
+
+    #carousel{
+        width: 395px !important ;
+        min-width: 395px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+}
+
+
+@media screen and (device-aspect-ratio: 71/40) {
+     #carousel{
+        width: 327px !important ;
+        min-width: 327px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 200px;
+    }
+}
+@media screen and (device-aspect-ratio: 3/2) {
+    #carousel{
+        width: 327px !important ;
+        min-width: 327px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 200px;
+    }
+}
+/* Pixel 2XL */
+@media screen 
+  and (device-width: 823px) 
+  and (device-height:  411px) 
+  and (-webkit-device-pixel-ratio: 3.5) 
+  and (orientation: landscape) {
+
+    #carousel{
+        width: 550px !important ;
+        min-width: 550px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+}
+/* Google Pixel 2 */
+@media only screen 
+and (-webkit-device-pixel-ratio: 1.77)
+  and (orientation: landscape) {
+
+    #carousel{
+        width: 460px !important ;
+        min-width: 460px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
