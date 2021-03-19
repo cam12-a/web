@@ -2,12 +2,15 @@
 @use postcss-nested;
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 html{
-    min-width: 350;
-    min-height: 250;
+    min-width: 320;
+    min-height: 700;
 }
 body{
-     min-width: 350;
-    min-height: 250;
+     min-width: 320;
+    min-height: 700;
+}
+.header {
+    background-color: #0A122A;
 }
 .header > .header-right {
 	display: inline-block;
@@ -86,6 +89,34 @@ button.btn {
 }
 nav .header-rightHideen{
     display: none;
+}
+#catalogue {
+    border: 5px solid black;
+    height: 500px;
+    width: 200px;
+}
+#carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 1100px;
+    margin-left: 0px;
+    
+
+}
+#belowCarousel {
+    border: 5px solid red;
+    height: 100px;
+    width: auto;
+    margin-left: 215px;
+}
+#container-fluid #carousel{
+ display: inline-block;
+}
+#container-fluid #belowCarousel{
+ display: block;
+}
+#container-fluid #catalogue{
+ display: inline-block;
 }
 @media screen and (max-width: 560px){
 	nav #banner .header-right .ulForBanner li{
@@ -171,6 +202,16 @@ nav .header-rightHideen{
         margin-left: 0px;
         transform: translateX(0px);
     }
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 340px !important;
+    margin-left: 0px;
+    min-width: 200px !important;
+}
+aside#catalogue{
+    display: none !important;
+}
 
 }
 @media only screen and (min-device-width: 700px) and (max-device-width: 1024px) {
@@ -178,18 +219,137 @@ nav .header-rightHideen{
      .search {
         margin-left: auto;
         transform: translateX(0px);
+
+    }
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 700px;
+    margin-left: 0px;
+    min-width: 700px;
+    max-width: 1026px; 
+    }
+    aside#catalogue{
+    display: none !important;
+}
+}
+
+@media only screen and (max-device-width: 1024px) {
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 1024px;
+    margin-left: 0px;
+    min-width: 512px;
     }
 
+}
 
+@media only screen and (max-width: 411px) {
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 388px !important;
+    margin-left: 0px;
+    min-width: 388px !important;
+    }
+
+}
+@media only screen and (max-width: 360px) {
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 340px !important;
+    margin-left: 0px;
+    min-width: 340px !important;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 300px !important;
+    margin-left: 0px;
+    min-width: 300px !important;
+
+}
+.search {
+     width: auto;
+}
 }
 @media screen and (max-width: 715px){
 
      .search {
         margin-left: 10px;
         transform: translateX(0px);
+        width: auto;
     }
 
+   
 }
+
+@media screen and (device-aspect-ratio: 375/667) {
+    #carousel{
+        width: 347px !important;
+        min-width: 347px !important;
+    }
+}
+@media screen and (device-aspect-ratio: 16/9) {
+    #carousel{
+        width: 347px !important;
+        min-width: 347px !important;
+    }
+}
+
+@media screen and (device-aspect-ratio: 3/4) {
+        #carousel{
+        width: 750px !important;
+        min-width: 750px !important;
+    }
+}
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+
+        #carousel{
+        width: 354px !important ;
+        min-width: 354px !important;
+    }
+    }
+
+    @media only screen 
+    and (device-width : 414px) 
+    and (device-height : 736px) 
+    and (-webkit-device-pixel-ratio : 3) {
+         #carousel{
+        width: 392px !important ;
+        min-width: 392px !important;
+    }
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aside#catalogue{
+    display: none !important;
+}
+
 
 
 
