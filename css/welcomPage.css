@@ -91,15 +91,16 @@ nav .header-rightHideen{
     display: none;
 }
 #catalogue {
-    border: 5px solid black;
     height: 500px;
     width: 200px;
+    position: absolute;
 }
 #carousel {
     border: 5px solid yellow;
     height: 500px;
-    width: 1100px;
-    margin-left: 0px;
+    width: fill;
+    transform: translateX(200px);
+    position: absolute;
     
 
 }
@@ -107,6 +108,8 @@ nav .header-rightHideen{
     border: 5px solid red;
     height: 100px;
     width: auto;
+    transform: translateY(505px);
+    position: absolute;
 }
 #container-fluid #carousel{
  display: inline-block;
@@ -117,6 +120,7 @@ nav .header-rightHideen{
 #container-fluid #catalogue{
  display: inline-block;
 }
+
 @media screen and (max-width: 560px){
 	nav #banner .header-right .ulForBanner li{
 		display: block;
@@ -207,6 +211,7 @@ nav .header-rightHideen{
     width: 340px !important;
     margin-left: 0px;
     min-width: 200px !important;
+     transform: translateX(0px);
 }
 aside#catalogue{
     display: none !important;
