@@ -107,7 +107,6 @@ nav .header-rightHideen{
     border: 5px solid red;
     height: 100px;
     width: auto;
-    margin-left: 215px;
 }
 #container-fluid #carousel{
  display: inline-block;
@@ -444,8 +443,19 @@ aside#catalogue{
     }
 
     /*Ipad */
-@media screen and (device-aspect-ratio: 4/3) {
+/*@media screen and (device-aspect-ratio: 4/3) {
         #carousel{
+        width: 750px !important;
+        min-width: 750px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+} */
+
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+     #carousel{
         width: 750px !important;
         min-width: 750px !important;
     }
@@ -538,7 +548,26 @@ and (-webkit-device-pixel-ratio: 1.77)
 }
  
 
+@media screen and (device-width: 360px)
+ and (device-height: 640px) 
+ and (-webkit-device-pixel-ratio: 3)
+{
+     #carousel{
+        width: 330px !important ;
+        min-width: 330px !important;
+    }
 
+}
+@media screen and (device-width: 640px)
+ and (device-height: 360px) 
+ and (-webkit-device-pixel-ratio: 3)
+{
+     #carousel{
+        width: 400px !important ;
+        min-width: 400px !important;
+    }
+
+}
 
 
 
