@@ -97,11 +97,10 @@ nav .header-rightHideen{
     width: 200px;
     
 }
+
 #carousel {
     border: 5px solid yellow;
     height: 500px;
-    width: 1000px;
-   
     position: absolute;
     
 
@@ -109,8 +108,8 @@ nav .header-rightHideen{
 #belowCarousel {
     border: 5px solid red;
     height: 100px;
-    width: 1000px;
-    transform: translateY(10px);
+    width: auto;
+    transform: translateY(500px);
    
 }
 #container-fluid #carousel{
