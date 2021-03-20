@@ -4,11 +4,11 @@
 	<title>Онлайн магазин</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/welcomPage.css">
 	<link rel="stylesheet" type="text/css" href="css/modalLogin.css">
 	<link rel="stylesheet" type="text/css" href="css/logo.css">
 	<link rel="stylesheet" type="text/css" href="css/menuLeft.css">
-
 
 </head>
 <body>
@@ -25,7 +25,7 @@
 					<div class="header-midle">
 						<form>
 							<span class="icon"><i class="fa fa-search"></i></span>
-							<input type="text" name="search" class="search" placeholder="Search">
+							<input type="text" name="search" class="search" placeholder="Поиск">
 							
 						</form>
 						
@@ -37,6 +37,7 @@
 						<li><a href="#">ОПЛАТА</a></li>
 						<li><a href="#" id="show-modal" class="btn" data-toggle="modal"> ЛИЧНЫЙ КАБИНЕТ</a></li>
 						<li><a href="aboutUs.html"> О НАС</a></li>
+						<li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
 
 					</ul>
 					</div>
@@ -88,24 +89,36 @@
 			</nav>
 		</header>
 		<div id="container-fluid">
+
 			<aside id="catalogue">
 				<ul class="menu-left">
-					<li><a href="#">Салат</a>
-						<ul>
-							<li class="submenu"><a href="">цезарь</a></li>
-							<li class="submenu"><a href="">свекла</a></li>
+
+					<li class="menu-salat"><a href="#">Салат
+						<span class="fleche-left fa fa-caret-down"></span>
+					</a>
+
+						<ul class="salat">
+							<li class="submenu"><a href="#">цезарь</a></li>
+							<li class="submenu"><a href="#">свекла</a></li>
+						</ul>
+
+					</li>
+
+					<li class="menu-bake"><a href="#">Выпечки
+						<span class="fleche-left fa fa-caret-down"></span>
+
+						</a>
+						<ul class="bake">
+							<li class="submenu"><a href="#">Ягоды</a></li>
+							<li class="submenu"><a href="#">Блины</a></li>
 						</ul>
 					</li>
-					<li><a href="">Выпечки</a>
-						<ul>
-							<li class="submenu"><a href="">Ягоды</a></li>
-							<li class="submenu"><a href="">Блины</a></li>
-						</ul>
-					</li>
-					<li><a href="">Заготовки</a>
+					<li class="menu"><a href="#">Заготовки</a>
 					</li>
 				</ul>
 			</aside>
+
+
 			<section id="carousel">
 					
 			</section>
@@ -123,8 +136,10 @@
 		
 	</footer>
 
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/loginModal.js"></script>
 	<script type="text/javascript" src="js/menu.js"></script>
+
 
 </body>
 </html>

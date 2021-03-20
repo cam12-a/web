@@ -1,6 +1,6 @@
 @use postcss-color-function;
 @use postcss-nested;
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 html{
     min-width: 320;
     min-height: 700;
@@ -8,6 +8,7 @@ html{
 body{
      min-width: 320;
     min-height: 700;
+    font-family: Montserrat;
 }
 .header {
     background-color: #0A122A;
@@ -33,12 +34,13 @@ nav .header-right .ulForBanner li {
 	/*transform: translate(-30px,-30px);*/
 	margin-left: 20px;
 	padding: 1px;
-	font-weight: 20px;
+	font-weight: 14px;
 
 }
 nav .header-right .ulForBanner li > a{
 	text-decoration: none;
 	color: #fff;
+    font-weight: 12px;
 }
 nav .header-right .ulForBanner li > a:hover{
 	padding: 1px;
@@ -65,10 +67,10 @@ header >nav{
     background-position: right;
     background-repeat: no-repeat;
     background-image: url(../img/search1.png);
-    background-size: 32px;
+    background-size: 20px;
     border-radius: 50px;
-    transform: translateX(50px);
-    margin-left: 250px;
+    transform: translateX(30px);
+    margin-left: 200px;
 }
 .search:focus{
     border-top: 0px;
@@ -93,13 +95,13 @@ nav .header-rightHideen{
 #catalogue {
     height: 500px;
     width: 200px;
-    position: absolute;
+    
 }
 #carousel {
     border: 5px solid yellow;
     height: 500px;
-    width: fill;
-    transform: translateX(200px);
+    width: 1000px;
+   
     position: absolute;
     
 
@@ -107,9 +109,9 @@ nav .header-rightHideen{
 #belowCarousel {
     border: 5px solid red;
     height: 100px;
-    width: auto;
-    transform: translateY(505px);
-    position: absolute;
+    width: 1000px;
+    transform: translateY(10px);
+   
 }
 #container-fluid #carousel{
  display: inline-block;
@@ -120,7 +122,10 @@ nav .header-rightHideen{
 #container-fluid #catalogue{
  display: inline-block;
 }
-
+.fleche-left {
+    margin-left: 10px;
+    height: 5px;
+}
 @media screen and (max-width: 560px){
 	nav #banner .header-right .ulForBanner li{
 		display: block;
@@ -156,7 +161,7 @@ nav .header-rightHideen{
         display: block;
         margin-left: 10px;
         padding: 1px;
-        font-weight: 20px;
+        font-weight: 14px;
     }
      nav .header-rightHideen .ulForBanner{
         background-color: #0A122A;
@@ -180,7 +185,7 @@ nav .header-rightHideen{
     }
      nav .header-rightHideen .ulForBanner li a {
       text-decoration: none;
-      font-size: 25px;
+      font-size: 14px;
       color: #818181;
       display: block;
       transition: 0.3s;
