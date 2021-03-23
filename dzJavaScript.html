@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+</head>
+<body>
+	<form id="form">
+	<input type="text" name="width" id="width">
+	<input type="text" name="height">
+	<input type="submit" name="submit">
+</form>
+<div id="result">
+	
+</div>
+<script type="text/javascript">
+	form.onsubmit=async (e)=>{
+		e.preventDefault();
+		var object = {};
+		var formData = new FormData(document.forms.form);
+
+		formData.forEach(function(value, key){
+		    object[key] = value;
+		});
+		var json = JSON.stringify(object);
+		let response=await fetch("http://127.0.0.1:5500/js/dzJavaScript.json",{
+			method:'GET',
+			headers: {
+				'Accept': 'application/json, */*' ,
+        		'Content-Type': 'application/json'
+			},
+		 	formData: json
+		});
+		const result = await response.json();
+		console.log(json)
+
+		//let displayElement =document.getElementById('result').append(result);
+		console.log(result);
+
+	}
+
+		(async () => {
+		  const rawResponse = await fetch('http://127.0.0.1:5500/js/dzJavaScript.php', {
+		    method: 'POST',
+		    headers: {
+		      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+		    },
+		    fort: new FormData()
+		  });
+		  const content = await rawResponse.json();
+
+		  console.log(content);
+		})();
+</script>
+
+</body>
+</html>
