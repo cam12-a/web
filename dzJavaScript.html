@@ -23,8 +23,10 @@
 		    object[key] = value;
 		});
 		var json = JSON.stringify(object);
-		let response=await fetch("http://127.0.0.1:5500/js/dzJavaScript.json",{
-			method:'GET',
+		try{
+
+			let response=await fetch("http://127.0.0.1:5500/js/dzJavaScript.json",{
+			method:'POST',
 			headers: {
 				'Accept': 'application/json, */*' ,
         		'Content-Type': 'application/json'
@@ -37,8 +39,13 @@
 		//let displayElement =document.getElementById('result').append(result);
 		console.log(result);
 
-	}
+		}catch(error){
+			console.log(error);
+		}
+		
 
+	}
+	/*
 		(async () => {
 		  const rawResponse = await fetch('http://127.0.0.1:5500/js/dzJavaScript.php', {
 		    method: 'POST',
@@ -51,6 +58,7 @@
 
 		  console.log(content);
 		})();
+		*/
 </script>
 
 </body>
