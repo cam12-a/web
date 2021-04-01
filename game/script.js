@@ -21,8 +21,33 @@ function drawChecker(){
   countCol=0
 }
 drawChecker();
-var a=document.getElementById("00")
+function getPoint(){
+  max=76
+  rdn=Math.floor(Math.random() * max);
+  console.log(rdn)
+  if (rdn<10)
+    return "0"+rdn;
+  else
+    return rdn;
+
+}
+function setColor(){
+  try{
+       var a=document.getElementById(getPoint());
+      a.style.backgroundColor="red";
+      //setTimeout(setColor(),3000);
+  }catch(e){
+
+    }
+}
+//var a=document.getElementById(getPoint());
+//a.style.blackgroundColor='red';
+  var a=document.getElementById(getPoint());
+
+setTimeout(setColor(),2000);
+var elem1=document.getElementById(getPoint());
 a.addEventListener('click',function(){
+
 var xhr= new XMLHttpRequest();
 /*let url=new URL("http://dotGame21.std-400.ist.mospolytech.ru/add.ajax.php");
 url.searchParams.set("col",1);
@@ -30,12 +55,12 @@ url.searchParams.set("row",1);
 url.searchParams.set("game",1);
 url.searchParams.set("user","alseny") */
 let url=new URL("http://dotGame21.std-400.ist.mospolytech.ru/get.ajax.php");
-url.searchParams.set("game",Number.parseInt("1"))
-xhr.open("GET",url,false)
+url.searchParams.set("game",Number.parseInt("1"));
+xhr.open("GET",url,false);
 //xhr.open("GET","http://dotGame21.std-400.ist.mospolytech.ru/get.ajax.php",false)
-xhr.send()
-console.log(xhr.status)
-console.log(xhr.response)
+xhr.send();
+console.log(xhr.status);
+console.log(xhr.response);
 
 //console.log(a);
 
