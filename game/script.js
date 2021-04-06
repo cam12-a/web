@@ -28,31 +28,7 @@ function drawChecker(){
 
 }
 drawChecker();
-function getPoint(){
-  max=76
-  rdn=Math.floor(Math.random() * max);
-  console.log(rdn)
-  if (rdn<10)
-    return "0"+rdn;
-  else
-    return rdn;
 
-}
-function setColor(){
-  try{
-       var a=document.getElementById(getPoint());
-      a.style.backgroundColor="red";
-      //setTimeout(setColor(),3000);
-  }catch(e){
-
-    }
-}
-function arrayRandom() {
-  n=Math.floor(Math.random()*64)
-  generatePoint=[n];
-  for(i=0;i<n;i++) generatePoint[i]=Math.floor(Math.random()*n);
-  return generatePoint;
-}
 
 function gameGetMethod(number){
     var xhr= new XMLHttpRequest();
@@ -105,7 +81,7 @@ function gameGetPostMethod(number,col,row,user){
 
     }
   }
-  str="";
+ 
 }
 function fullTable(el){
     var a=document.getElementsByClassName("main-block");
@@ -127,9 +103,7 @@ function fullTable(el){
     }catch(e){
 
     }
-  for (i in a[0].childNodes){
-    
-  }
+ 
 }
 
 function isTableFull(){
@@ -156,10 +130,10 @@ function isTableFull(){
 function intervalisTableFull(){
 
 }
-  var intervalisTableFull = window.setInterval(function(){
+ var intervalisTableFull = window.setInterval(function(){
     
   if(isTableFull()>=64){
-  console.log("in if")
+  //console.log("in if")
   var mydiv=document.getElementsByClassName('main-block');
   mydiv[0].innerHTML="";
   drawChecker();
