@@ -137,34 +137,57 @@ function isTableFull(){
   countEl=0;
   for(i in mydiv[0].childNodes){
     //console.log(mydiv[0].childNodes[i].style.backgroundColor)
+    //console.log(countEl);
     try{
        if(mydiv[0].childNodes[i].style.backgroundColor!=="")
         countEl+=1
+        if(countEl>=64){
+          return countEl;
+          //for(i in mydiv[0].childNodes)
+            //mydiv[0].childNodes[i].style.backgroundColor="transparent"
+      }   
     }catch(e){
 
     }
   }
-  if(countEl==64){
-    for(i in mydiv[0].childNodes)
-      mydiv[0].childNodes[i].style.backgroundColor=""
-  }   
+  
 }
 
-var intervalId = window.setInterval(function(){
-  arr=["red","blue","yellow","pink"]
-  printPosition(Math.floor(Math.random()*50),arr[Math.floor(Math.random()*4)]);
-}, 1000);
-var intervalFullPoint = window.setInterval(function(){
-  var N = 64;
-  var randomArray = Array(N).fill(0).map((x,i) => i + 1).sort(() => Math.random() - 0.5);
-  var index=Math.floor(Math.random()*64)
-  index=0?index=1:index=index;
- fullTable(randomArray[index]);
-}, 6000);
+function intervalisTableFull(){
 
+}
   var intervalisTableFull = window.setInterval(function(){
-    isTableFull();
-}, 1000);
+    
+  if(isTableFull()>=64){
+  console.log("in if")
+  var mydiv=document.getElementsByClassName('main-block');
+  mydiv[0].innerHTML="";
+  drawChecker();
+  }
+else{
+    var intervalId = window.setInterval(function(){
+    arr=["red","blue","yellow","pink"]
+    printPosition(Math.floor(Math.random()*50),arr[Math.floor(Math.random()*4)]);
+  }, 1000);
+  var intervalFullPoint = window.setInterval(function(){
+    var N = 64;
+    var randomArray = Array(N).fill(0).map((x,i) => i + 1).sort(() => Math.random() - 0.5);
+    var index=Math.floor(Math.random()*64)
+    index=0?index=1:index=index;
+   fullTable(randomArray[index]);
+  }, 3000);
+}
+
+
+
+}, 7000);
+
+
+
+
+
+
+
 
 
 
