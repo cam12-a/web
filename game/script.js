@@ -98,7 +98,7 @@ function gameGetPostMethod(number,col,row,user){
     try{
       if (document.getElementById(str).style.backgroundColor===""){
         document.getElementById(str).style.backgroundColor=color;
-        document.getElementById("empty").innerHTML="Цвет "+color+ " уже на доске ";
+        document.getElementById("empty").innerHTML="Игрок "+arr[i].USER;
       }
         
     }catch(e){
@@ -121,7 +121,7 @@ function fullTable(el){
     try{
       if (a[0].childNodes[el].style.backgroundColor===""){
           a[0].childNodes[el].style.backgroundColor=color;
-        document.getElementById("empty").innerHTML="Цвет "+color+ " уже на доске ";
+        document.getElementById("empty").innerHTML="Игрок компьютер";
       }
         
     }catch(e){
@@ -132,8 +132,23 @@ function fullTable(el){
   }
 }
 
-//arr=["red","blue","yellow","pink"]
-//printPosition(Math.floor(Math.random()*16),arr[Math.floor(Math.random()*4)])
+function isTableFull(){
+  var mydiv=document.getElementsByClassName('main-block');
+  countEl=0;
+  for(i in mydiv[0].childNodes){
+    //console.log(mydiv[0].childNodes[i].style.backgroundColor)
+    try{
+       if(mydiv[0].childNodes[i].style.backgroundColor!=="")
+        countEl+=1
+    }catch(e){
+
+    }
+  }
+  if(countEl==64){
+    for(i in mydiv[0].childNodes)
+      mydiv[0].childNodes[i].style.backgroundColor=""
+  }   
+}
 
 var intervalId = window.setInterval(function(){
   arr=["red","blue","yellow","pink"]
@@ -145,7 +160,13 @@ var intervalFullPoint = window.setInterval(function(){
   var index=Math.floor(Math.random()*64)
   index=0?index=1:index=index;
  fullTable(randomArray[index]);
-}, 2000);
+}, 6000);
+
+  var intervalisTableFull = window.setInterval(function(){
+    isTableFull();
+}, 1000);
+
+
 
 /*setTimeout(function(){
   a=Math.floor(Math.random()*5)
