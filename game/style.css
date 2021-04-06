@@ -27,3 +27,10 @@ body{
   background: black;
   border: 1px solid black;
 }
+#empty{
+  border: 2px solid black;
+  float: left;
+  height: 400px;
+  width: 300px;
+  transform: translateY(-400px);
+}

@@ -2,15 +2,21 @@ function drawChecker(){
   let mainBlock=document.querySelector('.main-block');
   let block;
   let flag=true;
-  let countRow=0
-  let countCol=0
+  let countRow=8
+  let countCol=8
+  let cnt=0
   let getPosition
   for (let i=0;i<8; i++){
-    countRow+=1;
+    countRow+=i
     for(let j=0;j<8;j++){
+      countCol+=j
       if (j==0) flag=!flag
       block=document.createElement('div');
-      block.id=i+""+j
+      if(i==0)
+        block.id=i+j+1;
+      else {
+        block.id=8*i+j+1;
+      }
       if (flag) block.className='block black ';
       else block.className='block white ';
 
@@ -18,7 +24,8 @@ function drawChecker(){
       flag=!flag;
     }
   }
-  countCol=0
+  
+
 }
 drawChecker();
 function getPoint(){
@@ -78,28 +85,68 @@ function gameGetPostMethod(number,col,row,user){
     document.getElementById("empty").innerHTML="Not point found";
   //console.log(arr.lenght)
   for(i in arr){
-      if(arr[i].ID>64) arr[i].ID=arr[i].ID%64
-     if(Number.parseInt(arr[i].ID)<0)
-      str="0"+arr[i].ID
-      else str=arr[i].ID
-      console.log(str);
+    str=(arr[i].ROW%8)+(arr[i].COL%8)
+    var N = 255;
+    var randomArray = Array(N).fill(0).map((x,i) => i + 1).sort(() => Math.random() - 0.5);
+    white=Math.floor(Math.random()*255)
+    white=0?white=1:white=white
+    red=Math.floor(Math.random()*255)
+    red=0?red=2:red=red
+    blue=Math.floor(Math.random()*255)
+    blue=0?blue=3:blue=blue
+    color="rgb("+randomArray[white]+","+randomArray[red]+","+randomArray[blue]+")";
     try{
-      document.getElementById(str).style.backgroundColor=color;
+      if (document.getElementById(str).style.backgroundColor===""){
+        document.getElementById(str).style.backgroundColor=color;
+        document.getElementById("empty").innerHTML="Цвет "+color+ " уже на доске ";
+      }
+        
     }catch(e){
 
     }
   }
   str="";
 }
-function sendRequestGet() {
-  arr=arrayRandom();
-  for(i=0;i<arr.lenght;i++)
-    a=0
+function fullTable(el){
+    var a=document.getElementsByClassName("main-block");
+    var N = 255;
+    var randomArray = Array(N).fill(0).map((x,i) => i + 1).sort(() => Math.random() - 0.5);
+    white=Math.floor(Math.random()*255)
+    white=0?white=1:white=white
+    red=Math.floor(Math.random()*255)
+    red=0?red=2:red=red
+    blue=Math.floor(Math.random()*255)
+    blue=0?blue=3:blue=blue
+    color="rgb("+randomArray[white]+","+randomArray[red]+","+randomArray[blue]+")";
+    try{
+      if (a[0].childNodes[el].style.backgroundColor===""){
+          a[0].childNodes[el].style.backgroundColor=color;
+        document.getElementById("empty").innerHTML="Цвет "+color+ " уже на доске ";
+      }
+        
+    }catch(e){
 
+    }
+  for (i in a[0].childNodes){
+    
+  }
 }
+
+//arr=["red","blue","yellow","pink"]
+//printPosition(Math.floor(Math.random()*16),arr[Math.floor(Math.random()*4)])
+
 var intervalId = window.setInterval(function(){
-  printPosition(Math.floor(Math.random()*8),"red");
+  arr=["red","blue","yellow","pink"]
+  printPosition(Math.floor(Math.random()*50),arr[Math.floor(Math.random()*4)]);
 }, 1000);
+var intervalFullPoint = window.setInterval(function(){
+  var N = 64;
+  var randomArray = Array(N).fill(0).map((x,i) => i + 1).sort(() => Math.random() - 0.5);
+  var index=Math.floor(Math.random()*64)
+  index=0?index=1:index=index;
+ fullTable(randomArray[index]);
+}, 2000);
+
 /*setTimeout(function(){
   a=Math.floor(Math.random()*5)
   printPosition(a,"red")
