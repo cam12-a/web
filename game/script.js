@@ -175,7 +175,7 @@ else{
     var index=Math.floor(Math.random()*64)
     index=0?index=1:index=index;
    fullTable(randomArray[index]);
-  }, 3000);
+  }, 6000);
 }
 
 
