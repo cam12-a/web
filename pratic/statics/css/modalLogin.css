@@ -1,0 +1,97 @@
+.modalWindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    z-index: 1010;
+    background-color: white;
+    border-radius: 5px;
+  }
+.modalBody{
+    border: 2px solid tomato ;
+    height: 200px;
+    width: 398px;
+    padding-top: 10px;
+    flex-direction: column;
+    float: left;
+}
+.modalHeader{
+    border: 2px solid steelblue;
+    height: auto;
+    width: 398px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.btnSubmit{
+    margin-top: 10px;
+    float: left;
+    padding:5px 15px; 
+    border-radius: 5px;
+    background-color: bisque; 
+    border: 2px solid bisque;
+}
+.btnCancel{
+    margin-top: 10px;
+    float: right;
+    padding:5px 15px; 
+    border-radius: 5px;
+    background-color: bisque; 
+    border: 2px solid bisque;
+   
+}
+.btnCancel:hover, .btnSubmit:hover{
+    font-weight: bold;
+   
+}
+.btnClose{
+    content: 'X';
+    float: right;
+    height: 30px;
+    background-color: transparent;
+    color: black;
+   
+}
+.btnSingIn{
+    height: 30px;
+    background-color: white;
+    border: none;
+
+}
+.btnSingOut{
+    height: 30px;
+    background-color: white;
+    border: none;
+
+}
+
+
+
+
+
+  /*.modal-guts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  /* отступы 
+    padding: 20px 50px 20px 20px;
+  /* разрешим скролить 
+    overflow: auto;
+  }
+  .modal-overlay {
+    z-index: 1000;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+  }
+  .modal.closed {
+    display: none;
+    }
+    */
