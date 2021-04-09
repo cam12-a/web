@@ -28,10 +28,10 @@
 
 					</ul>
 					</div>
-					<span class="category" onclick=" menu()">&#9776;КАТЕГОРИЯ</span>
+					<span class="category" v-on:click=" menu">&#9776;КАТЕГОРИЯ</span>
 					<div class="header-rightHideen" id="rightHeader">
 						<ul class="ulForBanner">
-						<span href="#" class="closebtn" onclick="closeMenu()">&times;</span>
+						<span href="#" class="closebtn" v-on:click="closeMenu">&times;</span>
 						<li><a href="#">КАТАЛОГ</a></li>
 						<li><a href="#">ДОСТАВКА</a></li>
 						<li><a href="#">ОПЛАТА</a></li>
@@ -75,8 +75,17 @@ export default {
 
             ]
         };
+       
 
-    }
+    },
+     methods: {
+            menu:function() {
+	            document.getElementById("rightHeader").style.display='block';
+            },
+            closeMenu:function() {
+	            document.getElementById("rightHeader").style.display='none';
+            }
+        }
     
 }
 </script>
