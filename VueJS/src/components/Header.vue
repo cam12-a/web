@@ -20,11 +20,17 @@
 					</div>
 					<div class="header-right">
 						<ul class="ulForBanner">
-						<li><a href="">КАТАЛОГ</a></li>
-						<li><a href="#">ДОСТАВКА</a></li>
-						<li><a href="#">ОПЛАТА</a></li>
-						<li><a href="#" id="showModal" class="btn" data-toggle="modal"> ЛИЧНЫЙ КАБИНЕТ</a></li>
+                        <li v-for="item in navList">
+                           <template>
+                                <li>
+                                    <a :href="item.url" :title="item.name">{{item.name}}</a>
+                                </li>
+                            </template>
+                        </li>
+						
+						<li><a href="#" v-bind:id=id class="btn" data-toggle="modal"> {{lk}}</a></li>
 						<li><a href="aboutUs.html"> О НАС</a></li>
+                        <li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
 
 					</ul>
 					</div>
@@ -32,10 +38,16 @@
 					<div class="header-rightHideen" id="rightHeader">
 						<ul class="ulForBanner">
 						<span href="#" class="closebtn" v-on:click="closeMenu">&times;</span>
-						<li><a href="#">КАТАЛОГ</a></li>
-						<li><a href="#">ДОСТАВКА</a></li>
-						<li><a href="#">ОПЛАТА</a></li>
-						<li><a href="#" id="showModal" class="btn" data-toggle="modal"> ЛИЧНЫЙ КАБИНЕТ</a></li>
+                         <li v-for="item in navList">
+                           <template>
+                                <li>
+                                    <a :href="item.url" :title="item.name">{{item.name}}</a>
+                                </li>
+                            </template>
+                        </li>
+						
+						<li><a href="#" v-bind:id=id class="btn" data-toggle="modal"> {{lk}}</a></li>
+                        <li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
 
 					</ul>
 					</div>
@@ -61,18 +73,11 @@ export default {
             isOpen:false,
             active:false,
             listOne:   false,
-           
+            id:"showModal",
+            lk:"ЛИЧНЫЙ КАБИНЕТ",
             navList:[
-                {url:"#",name:"Главная"},
-                {url:"#",name:"Создать меню",children:[
-                    {url:"www.facebook.com",name:"Молочные продукты"},
-                    {url:"#",name:"Овощи"},
-                    {url:"#",name:"Мясо"}
-
-                ]},
-                {url:"#",name:"О нас"},
-                {url:"#",name:"Личный кабинет"}
-
+                {url:"#",name:"ДОСТАВКА"},
+                {url:"#",name:"ОПЛАТА"},
             ]
         };
        
