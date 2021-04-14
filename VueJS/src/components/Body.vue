@@ -3,7 +3,7 @@
 
 			<aside id="catalogue">
 				<ul class="menu-left">
-					<li class="menu-salat"><a href="#">Салат
+					<li class="menu-salat" @click="getSalat"><a href="#">Салат
 						<span class="fleche-left fa fa-caret-down"></span>
 					</a>
 
@@ -14,7 +14,7 @@
 
 					</li>
 
-					<li class="menu-bake"><a href="#">Выпечки
+					<li class="menu-bake" @click="getBake"><a href="#">Выпечки
 						<span class="fleche-left fa fa-caret-down"></span>
 
 						</a>
@@ -31,9 +31,6 @@
 
 
 			<section id="carousel">
-
-				<i class="fa fa-arrow-circle-o-left" id="prevBtn" aria-hidden="true"></i>
-				<i class="fa fa-arrow-circle-o-right" id="nextBtn" aria-hidden="true"></i>
 				<div class="carousel-slide">
 					<img src="../../static/img/salat4.jpg" id="lastClone" alt="" >
 					<img src="../../static/img/salat1.jpg" class="slide">
@@ -41,6 +38,8 @@
 					<img src="../../static/img/salat3.jpg" class="slide">
 					<img src="../../static/img/salat4.jpg" id="firstClone" alt="" class="slide">
 				</div>
+				<i class="fa fa-arrow-circle-o-left" id="prevBtn" aria-hidden="true" ></i>
+				<i class="fa fa-arrow-circle-o-right" id="nextBtn" aria-hidden="true"></i>
 					
 			</section>
 			
@@ -55,7 +54,7 @@
 				</section>
 				
 			</div>
-		</div>
+	</div>
 </template>
 <script>
 export default {
@@ -82,6 +81,27 @@ export default {
             ]
         };
 
-    }
+    },
+	methods:{
+		getSalat:function(){
+			let menuSalat= document.querySelector(".menu-salat");
+			let carousel=""
+			menuSalat.addEventListener("click",()=>{
+				carousel=document.querySelector("#carousel")
+				carousel.innerHTML=""
+				$("#carousel").append(carousel)
+			})
+		},
+		getBake:function(){
+			 let menuSalat= document.querySelector(".menu-bake");
+			let carousel=""
+			menuSalat.addEventListener("click",()=>{
+				carousel=document.querySelector("#carousel")
+				carousel.innerHTML=""
+				$("#carousel").append(carousel)
+			})
+		}
+
+	}
 }
 </script>

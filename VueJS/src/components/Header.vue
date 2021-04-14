@@ -31,6 +31,7 @@
 						<li><a href="#" v-bind:id=id class="btn" data-toggle="modal"> {{lk}}</a></li>
 						<li><a href="aboutUs.html"> О НАС</a></li>
                         <li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
+                        <vcountOrder>{{count}}</vcountOrder>
 
 					</ul>
 					</div>
@@ -90,8 +91,12 @@ export default {
             closeMenu:function() {
 	            document.getElementById("rightHeader").style.display='none';
             }
+        },
+    computer:{
+        count:function(){
+            
         }
-    
+    }
 }
 </script>
 <style scope>
