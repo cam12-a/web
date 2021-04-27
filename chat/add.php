@@ -27,8 +27,6 @@ try {
         $sql="INSERT INTO tchat(fullname,comment) VALUES(?,?)";
         $conn->prepare($sql)->execute([$name,$comment]);      
     }
-    
-   
 
  // echo "Connected successfully\n";
  
