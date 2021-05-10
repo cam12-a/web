@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="container-fluid">
+    <aside id="catalogue">
+        <ul class="menu-left">
+            <li class="menu-salat"><a href="#">Салат
+                <span class="fleche-left fa fa-caret-down"></span>
+            </a>
+                <ul class="salat">
+                    <li class="submenu"><a href="#">цезарь</a></li>
+                    <li class="submenu"><a href="#">свекла</a></li>
+                </ul>
+            </li>
+            <li class="menu-bake"><a href="#">Выпечки
+                <span class="fleche-left fa fa-caret-down"></span>
+                </a>
+                <ul class="bake">
+                    <li class="submenu"><a href="#">Ягоды</a></li>
+                    <li class="submenu"><a href="#">Блины</a></li>
+                </ul>
+            </li>
+            <li class="menu"><a href="#">Заготовки</a>
+            </li>
+            <li class="menu"><a href="dzJavaScript.html">ДЗ JavaScript fetch</a></li>
+        </ul>
+    </aside>
+    <section id="carousel">
+        <i class="fa fa-arrow-circle-o-left" id="prevBtn" aria-hidden="true"></i>
+        <i class="fa fa-arrow-circle-o-right" id="nextBtn" aria-hidden="true"></i>
+        <div class="carousel-slide">
+            <img src="static/img/salat4.jpg" id="lastClone" alt="" >
+            <img src="static/img/salat1.jpg" class="slide">
+            <img src="static/img/salat2.jpg" class="slide">
+            <img src="static/img/salat3.jpg" class="slide">
+            <img src="static/img/salat4.jpg" id="firstClone" alt="" class="slide">
+        </div>
+            
+    </section>
+            
+    <div id="belowCarousel">
+        <section>
+            
+        </section>
+        
+    </div>
+</div>
+</div>
+{% endblock %}

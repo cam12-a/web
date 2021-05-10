@@ -1,0 +1,149 @@
+.modalWindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    z-index: 1010;
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 5px;
+  }
+.modalBody{
+    margin-top: 20px;
+   
+    height: 200px;
+    width: 398px;
+    padding-top: 10px;
+    flex-direction: column;
+    float: left;
+}
+.modalHeader{
+    
+    height: auto;
+    width: 398px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    background-color: white;
+   
+}
+.btnSubmit{
+    margin-top: 10px;
+    float: left;
+    padding:5px 15px; 
+    border-radius: 5px;
+    background-color: bisque; 
+    border: 2px solid bisque;
+}
+.btnCancel{
+    margin-top: 10px;
+    float: right;
+    padding:5px 15px; 
+    border-radius: 5px;
+    background-color: bisque; 
+    border: 2px solid bisque;
+   
+}
+.btnCancel:hover, .btnSubmit:hover{
+    font-weight: bold;
+   
+}
+
+.btnClose{
+    content: 'X';
+    float: right;
+    height: 30px;
+    background-color: #FFF;
+    color: black;
+   
+}
+.btnSingIn{
+    height: 30px;
+    background-color: white;
+    border: none;
+
+}
+.btnSingOut{
+    height: 30px;
+    background-color: white;
+    border: none;
+
+}
+
+.remember{
+  color: white;
+  }
+  
+  .remember input
+  {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+  }
+  
+  .login_btn{
+  color: black;
+  background-color: #FFC312;
+  width: 100px;
+  float: right;
+  }
+  
+  .login_btn:hover{
+  color: black;
+  background-color: white;
+  }
+  .card{  
+    background-color: rgba(0,0,0,0.1) !important;
+
+    }
+
+  .form-control{
+    margin-bottom: 15px;
+    
+  }
+.fa-user , .fa-key{
+  height: 24px;
+}
+
+.social_icon span{
+  font-size: 20px;
+  margin-left: 10px;
+  color: #FFC312;
+  }
+  
+  .social_icon span:hover{
+  color: white;
+  cursor: pointer;
+  }
+  .sigin_btn{
+    float: right;
+    background-color: #FFC312;
+
+
+  }
+  /*.modal-guts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  /* отступы 
+    padding: 20px 50px 20px 20px;
+  /* разрешим скролить 
+    overflow: auto;
+  }
+  .modal-overlay {
+    z-index: 1000;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+  }
+  .modal.closed {
+    display: none;
+    }
+    */
