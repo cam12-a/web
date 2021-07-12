@@ -1,0 +1,738 @@
+@use postcss-color-function;
+@use postcss-nested;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+html{
+    min-width: 320;
+    min-height: 700;
+}
+body{
+     min-width: 320;
+    min-height: 700;
+    font-family: Montserrat;
+}
+.header {
+    background-color: #0A122A;
+}
+.header > .header-right {
+	display: inline-block;
+	float: flex-end;
+    position: relative;
+}
+.header > .header-left{
+	display: inline-block;
+    float: left;
+	
+}
+.header > .header-mindle > #cover {
+	display: inline-block;
+}
+nav {
+	background-color: #0A122A;
+}
+nav .header-right .ulForBanner li {
+	display: inline-block;
+	/*transform: translate(-30px,-30px);*/
+	margin-left: 20px;
+	padding: 1px;
+	font-weight: 14px;
+
+}
+nav .header-right .ulForBanner li > a{
+	text-decoration: none;
+	color: #fff;
+    font-weight: 12px;
+}
+nav .header-right .ulForBanner li > a:hover{
+	padding: 1px;
+	font-weight: 20px;
+	
+}
+nav .header-right .ulForBanner .menu-left-responsive{
+	display: none;
+}
+nav .header-midle{
+	display: inline-block;
+}
+header >nav{
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+.search {
+	height: 30px;
+	width: 305px;
+	border-radius: 0px 0px 0px 0px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url(../img/search1.png);
+    background-size: 20px;
+    border-radius: 50px;
+    transform: translateX(30px);
+    margin-left: 200px;
+}
+.search:focus{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 0px;
+}
+button.btn {
+	height: 32px;
+	margin-left: -4.5px;
+	border:0px solid #0A122A;
+	border-radius: 0px 0px 3px 3px;
+	top: 26.1px;
+}
+.category{
+    display: none;
+    color: red;
+}
+nav .header-rightHideen{
+    display: none;
+}
+#catalogue {
+    height: 500px;
+    width: 200px;
+    
+}
+
+#carousel {
+    height: 500px;
+    position: absolute;
+    width: auto;
+    transform: translateX(20px);
+}
+#belowCarousel {
+    border: 5px solid red;
+    height: 100px;
+    width: auto;
+    transform: translateY(500px);
+   
+}
+#container-fluid #carousel{
+ display: inline-block;
+}
+#container-fluid #belowCarousel{
+ display: block;
+}
+#container-fluid #catalogue{
+ display: inline-block;
+}
+.fleche-left {
+    margin-left: 10px;
+    height: 5px;
+}
+@media screen and (max-width: 560px){
+	nav #banner .header-right .ulForBanner li{
+		display: block;
+	}
+	nav #banner .header-midle .ulForBanner li{
+		display: block;
+	}
+	nav #banner .ulForBanner li {
+		margin-top: 25px;
+		z-index: 1000px;
+	}
+    nav .header .header-right{
+        display: none;
+    }
+    nav .header .header-rightHideen{
+        display: none;
+        position: fixed;
+        height: auto;
+        z-index: 1;
+        top: 10px;
+        left:10px;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px; 
+    }
+    nav .category{
+        display: block;
+        color: white;
+        top: 10px;
+        transform: translate(1px,11px);
+    }
+    nav .header-rightHideen .ulForBanner li {
+        display: block;
+        margin-left: 10px;
+        padding: 1px;
+        font-weight: 14px;
+    }
+     nav .header-rightHideen .ulForBanner{
+        background-color: #0A122A;
+        margin-left: auto;
+        margin-right: auto;
+        float: right;
+        transform: translateY(22.5px);
+        height: 250px;
+        width: 200px;
+        border-radius: 0px 50px 50px 0px;
+     }
+    nav .header-rightHideen .ulForBanner li > a{
+        text-decoration: none;
+        color: black;
+    }
+    nav .header-rightHideen .ulForBanner li  a:hover{
+        padding: 3px;
+        font-weight: 20px;
+        color: white;
+        
+    }
+     nav .header-rightHideen .ulForBanner li a {
+      text-decoration: none;
+      font-size: 14px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+      transform: translate(10px,20px);
+    }
+     nav .header-rightHideen .ulForBanner li a:hover {
+      color: #fff;
+    }
+
+     span.closebtn {
+      position: absolute;
+      top: -10px;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 270px;
+      color: white;
+      bottom: 10px;
+
+      
+    }
+    .search {
+        margin-left: 0px;
+        transform: translateX(0px);
+    }
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 340px !important;
+    margin-left: 0px;
+    min-width: 200px !important;
+     transform: translateX(0px);
+}
+aside#catalogue{
+    display: none !important;
+}
+
+}
+@media only screen and (min-device-width: 700px) and (max-device-width: 1024px) {
+
+     .search {
+        margin-left: auto;
+        transform: translateX(0px);
+
+    }
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 700px;
+    margin-left: 0px;
+    min-width: 700px;
+    max-width: 1026px; 
+    }
+    aside#catalogue{
+    display: none !important;
+}
+}
+
+@media only screen and (max-device-width: 1024px) {
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 1024px;
+    margin-left: 0px;
+    min-width: 512px;
+    }
+
+}
+
+@media only screen and (max-width: 411px) {
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 388px !important;
+    margin-left: 0px;
+    min-width: 388px !important;
+    }
+
+}
+@media only screen and (max-width: 360px) {
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 340px !important;
+    margin-left: 0px;
+    min-width: 340px !important;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    
+    #carousel {
+    border: 5px solid yellow;
+    height: 500px;
+    width: 300px !important;
+    margin-left: 0px;
+    min-width: 300px !important;
+
+}
+.search {
+     width: auto;
+}
+}
+@media screen and (max-width: 715px){
+
+     .search {
+        margin-left: 10px;
+        transform: translateX(0px);
+        width: auto;
+    }
+
+   
+}
+/*IPHONE */
+@media screen and (device-aspect-ratio: 375/667) {
+    #carousel{
+        width: 347px !important;
+        min-width: 347px !important;
+    }
+}
+/*Iphone 6+*/
+@media screen and (device-aspect-ratio: 16/9) {
+    #carousel{
+        width: 347px !important;
+        min-width: 347px !important;
+    }
+}
+/*Iphone 5*/
+@media screen and (device-aspect-ratio: 3/4) {
+        #carousel{
+        width: 750px !important;
+        min-width: 750px !important;
+    }
+}
+/*IPHONE 6/7/8*/
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+
+        #carousel{
+        width: 354px !important ;
+        min-width: 354px !important;
+    }
+    }
+/*Iphone8+ */
+    @media only screen 
+    and (device-width : 414px) 
+    and (device-height : 736px) 
+    and (-webkit-device-pixel-ratio : 3) {
+         #carousel{
+        width: 392px !important ;
+        min-width: 392px !important;
+    }
+
+     }
+     /*Ipad pro*/
+     @media only screen 
+      and (min-width: 1024px) 
+      and (max-height: 1366px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 1000px !important ;
+            min-width: 1000px !important;
+        }
+        }
+        /* Surface Duo*/
+     @media only screen 
+      and (min-width: 540px) 
+      and (max-height: 720px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 520px !important ;
+            min-width: 520px !important;
+        }
+        }
+        /* Galaxy Fold*/
+     @media only screen 
+      and (min-width: 280px) 
+      and (max-height: 653px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 260px !important ;
+            min-width: 260px !important;
+        }
+        }
+
+        /*Iphone 5/SE */
+        @media screen and (device-aspect-ratio: 40/71) {
+     #carousel{
+        width: 300px !important ;
+        min-width: 300px !important;
+    }
+}
+/*---------------------------------------------- Portrai Orientatiom *----------------------------------------------------------/
+     /* Galaxy Fold*/
+    @media only screen 
+      and (min-width: 653px) 
+      and (max-height: 280px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 413px !important ;
+            min-width: 413px !important;
+        }
+            aside#catalogue{
+                 display: inline-block !important;
+            }
+        }
+     /* Surface Duo*/
+     @media only screen 
+      and (min-width: 720px) 
+      and (max-height: 540px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 480px !important ;
+            min-width: 480px !important;
+        }
+        aside#catalogue{
+                 display: inline-block !important;
+            }
+        }
+
+        /*Ipad pro*/
+     @media only screen 
+      and (min-width: 1366px) 
+      and (max-height: 1024px) 
+      and (-webkit-min-device-pixel-ratio: 1.5) {
+            #carousel{
+            width: 1000px !important ;
+            min-width: 1000px !important;
+        }
+        aside#catalogue{
+                 display: inline-block !important;
+                 width: 320px;
+            }
+
+        }
+
+        /*Ipad */
+    @media only screen 
+    and (device-width : 1024px) 
+    and (device-height : 768px) 
+    and (-webkit-device-pixel-ratio : 1.5) {
+         #carousel{
+        width: 320px !important ;
+        min-width: 320px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 200px;
+            }
+
+     }
+
+
+     /*IPHONE X*/
+@media only screen 
+    and (device-width : 812px) 
+    and (device-height : 375px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+
+        #carousel{
+        width: 566px !important ;
+        min-width: 566px !important;
+    }
+    }
+
+    /*Ipad */
+/*@media screen and (device-aspect-ratio: 4/3) {
+        #carousel{
+        width: 750px !important;
+        min-width: 750px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+} */
+
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+     #carousel{
+        width: 750px !important;
+        min-width: 750px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+}
+/*Iphone8+ */
+    @media only screen 
+    and (device-width : 736px) 
+    and (device-height : 414px) 
+    and (-webkit-device-pixel-ratio : 3) {
+         #carousel{
+        width: 460px !important ;
+        min-width: 460px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+     }
+     /*Iphone 6/7/8 */
+@media screen and (device-aspect-ratio: 667/375) {
+
+    #carousel{
+        width: 395px !important ;
+        min-width: 395px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+}
+
+
+@media screen and (device-aspect-ratio: 71/40) {
+     #carousel{
+        width: 327px !important ;
+        min-width: 327px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 200px;
+    }
+}
+@media screen and (device-aspect-ratio: 3/2) {
+    #carousel{
+        width: 327px !important ;
+        min-width: 327px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 200px;
+    }
+}
+/* Pixel 2XL */
+@media screen 
+  and (device-width: 823px) 
+  and (device-height:  411px) 
+  and (-webkit-device-pixel-ratio: 3.5) 
+  and (orientation: landscape) {
+
+    #carousel{
+        width: 550px !important ;
+        min-width: 550px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+}
+/* Google Pixel 2 */
+@media only screen 
+and (-webkit-device-pixel-ratio: 1.77)
+  and (orientation: landscape) {
+
+    #carousel{
+        width: 460px !important ;
+        min-width: 460px !important;
+    }
+    aside#catalogue{
+                 display: inline-block !important;
+                 width: 230px;
+    }
+
+}
+ 
+
+@media screen and (device-width: 360px)
+ and (device-height: 640px) 
+ and (-webkit-device-pixel-ratio: 3)
+{
+     #carousel{
+        width: 330px !important ;
+        min-width: 330px !important;
+    }
+
+}
+@media screen and (device-width: 640px)
+ and (device-height: 360px) 
+ and (-webkit-device-pixel-ratio: 3)
+{
+     #carousel{
+        width: 400px !important ;
+        min-width: 400px !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    color: black;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    width: auto;
+}
+
+#cover
+{
+    left: 15px;
+    right: 15px;
+    width: 350px;
+    padding: 0px;
+    border-radius: 20px;
+    height: 10px;
+    border: 1px solid #ff7575;
+    transform: translate(-30px,6px);
+    background-color: white ;
+}
+
+
+
+
+input.search::placeholder
+{
+    color: #e16868;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 15px;
+}
+
+
+#s-circle
+{
+   
+    top: -2px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    margin-top: 0;
+    border-width: 1px;
+    border: 2px solid #ff7575;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+button span
+{
+    position: absolute;
+    top: 68px;
+    left: 43px;
+    display: block;
+    width: 45px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+/*button span:before, button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 67px;
+    height: 15px;
+    border-width: 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+}
+
+#ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #fff;
+  font-family: Nunito;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #ff7575;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
+  z-index: 125;
+}
+*/
+
+
+
+
