@@ -187,6 +187,7 @@ $(".editPWD").on("click",function(){
 
    destroyModal();
     generateModalWindows("Изменение пароля");
+    generateModalUpdatePWD();
 
 });
 
@@ -550,6 +551,30 @@ function getTeacherList(appendTo){
   });
 
 }
+
+
+function generateModalUpdatePWD() {
+  let form="";
+  form='<form class="card form-horizontal" method="Post" action="./../../Admin/UpdatePasswordFromProfile/">'+
+      '<div class="form-group ">'+
+      '<label class="control-label col-sm-3 text-white" for="name" style="color:white;">Новый пароль</label>'+
+      '<div class="col-sm-10">'+
+      '<input type="password" name="pwd" class="pwd" id="pwd">'+
+      '</div>'+
+      '</div>'+
+      '<div class="form-group  ">'+
+      '<label class="control-label col-sm-3 text-white" for="name" style="color:white;">Повторите пароль</label>'+
+      '<div class="col-sm-10">'+
+        '<input type="password" name="Confirmpwd" class="Confirmpwd" id="Confirmpwd">'+
+      '</div>'+
+    '</div>'+
+    '</div>'+
+     '<div class="form-group">'+
+        '<input type="submit" value="Назначить" class="btn float-right login_btn confirm_btn">'+
+    '</div></form>';
+  $('.modalBody').append(form);
+}
+
 
 function generateModalSchedule(actionName) {
  
