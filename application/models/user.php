@@ -40,4 +40,16 @@ class user extends CI_Model
 		return $this->db->get()->row();
 	}
 
+	public function getUser(){
+		return $this->db->get('user')->result();
+	}
+
+	public function updateUserFullData($data)
+	{
+		$this->db->set("Firstname",$data['Firstname']);
+		$this->db->set('Lastname',$data['Lastname']);
+		$this->db->set("name",$data['name']);
+		$this->db->where("email",$data['email']);
+		$this->db->update('user');
+	}
 }

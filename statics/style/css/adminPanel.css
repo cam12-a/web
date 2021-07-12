@@ -176,3 +176,17 @@ p.deleteMSG{
 .confirm_btn{
     transform: translateX(120px);
 }
+.adminForm{
+    border: 2px solid white;
+    box-shadow: 4px bisque;
+    background: aqua;
+   transform: translateY(50px);
+    left: 0;
+    right: 0;
+    margin: auto;  
+    width: 400px;
+}
+.tocenter {
+
+
+}

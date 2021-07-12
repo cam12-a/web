@@ -150,7 +150,7 @@ $(document).ready(function () {
   });
 sendDataToSchedulePage();
    $("#teacherScheduleGrade").on('change',function(){
-    console.log("onchange");
+  
     clearScheduleTable();
     getPreSchedule();
     sendDataToSchedulePage();
@@ -167,6 +167,28 @@ $(".currentDate").on('change',function(){
   
 
 
+$(".btn_edit").on("click",function(){
+ 
+  $(".toEdit").removeAttr('disabled');
+  $(".submitEdit").show();
+  $(".btn_cancel").show();
+  $(this).hide();
+ 
+});
+$(".btn_cancel").on("click",function () {
+     $(".toEdit").attr('disabled','true');
+    $(".submitEdit").hide();
+    $(".btn_edit").show();
+    $(this).hide();
+})
+
+
+$(".editPWD").on("click",function(){
+
+   destroyModal();
+    generateModalWindows("Изменение пароля");
+
+});
 
 
 

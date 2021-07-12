@@ -252,9 +252,9 @@ class Admin extends CI_Controller {
 			
 			
 			$this->ModelStudent->addStudent($studentInfo);
-			$data['title']="Категория";
+			$data['title']="Студент";
 			$studientList['notes']=$this->ModelStudent->studientsLists();
-			$studientList['client']="dffg";
+			$studientList['client']="";
 			$this->load->view('AdminHeader',$data);
 			$this->load->view('AdminHomeStudent',$studientList);
 			$this->load->view('footer');
@@ -805,14 +805,54 @@ class Admin extends CI_Controller {
 
 
 	function gen_password($length = 6)
-{				
-	$chars = 'qazxswedcvfrtgbnhyujmkiolp1234567890QAZXSWEDCVFRTGBNHYUJMKIOLP'; 
-	$size = strlen($chars) - 1; 
-	$password = ''; 
-	while($length--) {
-		$password .= $chars[random_int(0, $size)]; 
+	{				
+		$chars = 'qazxswedcvfrtgbnhyujmkiolp1234567890QAZXSWEDCVFRTGBNHYUJMKIOLP'; 
+		$size = strlen($chars) - 1; 
+		$password = ''; 
+		while($length--) {
+			$password .= $chars[random_int(0, $size)]; 
+		}
+		return $password;
 	}
-	return $password;
-}
+
+
+	public function profile()
+	{
+		if($this->isSessionSet()){
+			$data['title']="Профиль";
+			$data['notes']=$this->user->getUser();
+			$this->load->view('AdminHeader',$data);
+			$this->load->view('AdminProfile',$data);
+			$this->load->view('footer');
+		}
+		else{
+			redirect('http://'.base_url('index.php/Admin'));
+		}
+		
+	}
+
+
+	public function EditAdminData()
+	{
+		if($this->isSessionSet()){
+		
+			$dataToUpdate=array(
+				'Firstname'=>$this->input->post("Firstname"),
+				'name'=>$this->input->post("name"),
+				'Lastname'=>$this->input->post("Lastname"),
+				'email'=>$this->input->post('email')
+			);
+		
+			$this->user->updateUserFullData($dataToUpdate);
+			$data['title']="Профиль";
+			$data['notes']=$this->user->getUser();
+			$this->load->view('AdminHeader',$data);
+			$this->load->view('AdminProfile',$data);
+			$this->load->view('footer');
+		}
+		else{
+			redirect('http://'.base_url('index.php/Admin'));
+		}
+	}
 
 }
