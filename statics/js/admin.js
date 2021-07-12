@@ -188,6 +188,26 @@ $(".editPWD").on("click",function(){
    destroyModal();
     generateModalWindows("Изменение пароля");
     generateModalUpdatePWD();
+    $(".pwd").on("change",function(){
+      console.log($(".pwd").val());
+       console.log(validPassword('.pwd','.Confirmpwd'));
+      if(!validPassword(".pwd",".Confirmpwd"))
+        $(".btn_updatepwd").hide();
+      else
+        $(".btn_updatepwd").show();
+    })
+    $(".Confirmpwd").on("change",function(){
+      console.log($(".Confirmpwd").val());
+       console.log(validPassword('.pwd','.Confirmpwd'));
+      if(!validPassword(".pwd",".Confirmpwd"))
+        $(".btn_updatepwd").hide();
+      else
+        $(".btn_updatepwd").show();
+    })
+
+    if($(".Confirmpwd").val()!="" && $(".pwd").val()!="" && validPassword('.pwd','.Confirmpwd'))
+        $(".btn_updatepwd").show();
+   
 
 });
 
@@ -559,21 +579,30 @@ function generateModalUpdatePWD() {
       '<div class="form-group ">'+
       '<label class="control-label col-sm-3 text-white" for="name" style="color:white;">Новый пароль</label>'+
       '<div class="col-sm-10">'+
-      '<input type="password" name="pwd" class="pwd" id="pwd">'+
+      '<input type="password" name="pwd" class="pwd" id="pwd" required>'+
       '</div>'+
       '</div>'+
       '<div class="form-group  ">'+
       '<label class="control-label col-sm-3 text-white" for="name" style="color:white;">Повторите пароль</label>'+
       '<div class="col-sm-10">'+
-        '<input type="password" name="Confirmpwd" class="Confirmpwd" id="Confirmpwd">'+
+        '<input type="password" name="Confirmpwd" class="Confirmpwd" id="Confirmpwd" required>'+
       '</div>'+
     '</div>'+
     '</div>'+
      '<div class="form-group">'+
-        '<input type="submit" value="Назначить" class="btn float-right login_btn confirm_btn">'+
+        '<input type="submit" value="Назначить" class="btn float-right login_btn btn_updatepwd">'+
     '</div></form>';
   $('.modalBody').append(form);
 }
+
+
+function validPassword(pwd1,pwd2) {
+  if($(pwd1).val()!=$(pwd2).val())
+    return false
+  else
+    return true;
+}
+
 
 
 function generateModalSchedule(actionName) {

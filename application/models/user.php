@@ -52,4 +52,10 @@ class user extends CI_Model
 		$this->db->where("email",$data['email']);
 		$this->db->update('user');
 	}
+
+	public function updatePWD($data){
+		$this->db->set('password',$data['pwd']);
+		$this->db->where('email',$data['email']);
+		$this->db->update('user');
+	}
 }

@@ -842,7 +842,7 @@ class Admin extends CI_Controller {
 				'Lastname'=>$this->input->post("Lastname"),
 				'email'=>$this->input->post('email')
 			);
-		
+
 			$this->user->updateUserFullData($dataToUpdate);
 			$data['title']="Профиль";
 			$data['notes']=$this->user->getUser();
@@ -853,6 +853,27 @@ class Admin extends CI_Controller {
 		else{
 			redirect('http://'.base_url('index.php/Admin'));
 		}
+	}
+
+	public function UpdatePasswordFromProfile(){
+		if($this->isSessionSet()){
+			$username=$this->session->userdata('username');
+			$pwdData=array(
+			'pwd'=>sha1($this->input->post("pwd")),
+			'email'=>$username
+		);
+			$this->user->updatePWD($pwdData);
+			$data['title']="Профиль";
+			$data['notes']=$this->user->getUser();
+			$this->load->view('AdminHeader',$data);
+			$this->load->view('AdminProfile',$data);
+			$this->load->view('footer');
+		}
+		else
+			redirect('http://'.base_url('index.php/Admin'));
+
+		
+
 	}
 
 }
