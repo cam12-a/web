@@ -498,7 +498,7 @@ class Admin extends CI_Controller {
 			else
 				$date1=date("Y-m-d", strtotime('monday this week'));
 
-			$date2= date("Y-m-d", strtotime('sunday this week'));
+			$date2= date("Y-m-d", strtotime('friday this week'));
 		
 			
 			$data['schedule']=$this->ModelSchedule->allScheduleInfo($id_grade,$date1,$date2);
@@ -507,6 +507,7 @@ class Admin extends CI_Controller {
 			$this->load->view('AdminHeader',$data);
 			$this->load->view('TeacherSchedule',$data);
 			$this->load->view('footer');
+			//var_dump($this->ModelSchedule->allScheduleInfo($id_grade,$date1,$date2));
 			json_encode($this->ModelSchedule->allScheduleInfo($id_grade,$date1,$date2));
 		}
 		else{

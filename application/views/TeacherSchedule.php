@@ -9,7 +9,7 @@
 	<button  class="assignSubject timeTableItem" >Назначить дисциплину</button>
 	<button  class="addSchedule timeTableItem">Составить расписание</button>
 	<form class="timeTableItem form-group" method="POST" action="./../../schedule/">
-		<input type="date" name="date1" class="currentDate">
+		<input type="date" name="date1" class="currentDate" value="<?php echo date("Y-m-d")?>" onchange="isDateChanged()">
 		<select id="teacherScheduleGrade" name="teacherScheduleGrade" class="timeTableItem"> 
 		<?php foreach($level as $key){?>
 			<option  value=<?php echo $key->id_grade?>><?php echo $key->gradeName?> </option>

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  clearLocalStorage();
 	$(".addStudent").on('click',function(){
 		destroyModal();
 		generateModalWindows("Добавление нового ученика");
@@ -138,18 +139,18 @@ $(document).ready(function () {
   setTimeout(function() {
     $('#error').fadeOut('fast');
 }, 1000); 
-
+  
   setDate(".currentDate");
   setDate(".dateSchedule");
-  $(".schedule").on('click',function(){
-
-     clearScheduleTable();
-      getPreSchedule();
-    
+  $(".schedule").on('click',function(event){
+      event.preventDefault();
+      clearScheduleTable();
+       getPreSchedule();
+     console.log($(".currentDate").val())
      
   });
-  getPreSchedule();
-sendDataToSchedulePage();
+  //getPreSchedule();
+//sendDataToSchedulePage();
    $("#teacherScheduleGrade").on('change',function(){
   
     clearScheduleTable();
@@ -159,12 +160,14 @@ sendDataToSchedulePage();
 
   });
 $(".currentDate").on('change',function(){
-    //location.reload();
+   clearScheduleTable();
+    localStorage.setItem( 'currentDate', JSON.stringify($(this).val()));
+     $(".currentDate").val(JSON.parse(localStorage.getItem('currentDate')));
+     getPreSchedule();
 
-    clearScheduleTable();
-    getPreSchedule();
-    sendDataToSchedulePage();
+    
 });
+
 
   
 
@@ -233,6 +236,22 @@ function clearScheduleTable() {
       $('.t6 td:first-child').html("17:35-19:10");
 
 
+}
+
+function isDateChanged(){
+  /*if(JSON.parse(localStorage.getItem('currentDate'))!=""){
+    dateStr=localStorage.getItem('currentDate')
+  
+    console.log(JSON.parse(localStorage.getItem('currentDate')));
+    $(".currentDate").val(JSON.parse(localStorage.getItem('currentDate')));
+    //localStorage.removeItem('currentDate');
+  }
+*/
+
+}
+
+function clearLocalStorage() {
+ //localStorage.removeItem('currentDate');
 }
 
 function sendDataToSchedulePage() {
@@ -406,6 +425,7 @@ function getPreSchedule(){
       
      });
       localStorage.setItem( 'sendedData', JSON.stringify(sendDataToOtherPage));
+      sendDataToSchedulePage();
       console.log(data);
       console.log(sendDataToOtherPage);
       
