@@ -148,20 +148,22 @@ $(document).ready(function () {
     
      
   });
+  getPreSchedule();
 sendDataToSchedulePage();
    $("#teacherScheduleGrade").on('change',function(){
   
     clearScheduleTable();
     getPreSchedule();
     sendDataToSchedulePage();
-    location.reload();
+    //location.reload();
 
   });
 $(".currentDate").on('change',function(){
-   clearScheduleTable();
+    //location.reload();
+
+    clearScheduleTable();
     getPreSchedule();
     sendDataToSchedulePage();
-    location.reload();
 });
 
   
@@ -389,7 +391,7 @@ function sendDataToSchedulePage() {
 
 
 function getPreSchedule(){
-  
+ 
   $.ajax({
     url:'./../../Admin/scheduleList/',
     type: 'POST',
@@ -999,7 +1001,7 @@ form='<form class="card form-horizontal levelStudent" method="Post" action="./..
       '</div>'+
     '</div>'+
 
-  '<div class="form-group"><label class="control-label col-sm-2" for="pwd" style="color:white;">Фотография:</label>'+
+  '<div class="form-group"><label class="control-label col-sm-2" for="pwd" style="color:white;">Фото:</label>'+
       '<div class="col-sm-10">'+          
         '<input type="file" class="form-control" id="picture" name="picture">'+
       '</div>'+
@@ -1058,7 +1060,7 @@ form='<form id="editStudent" class="card levelStudent" method="Post" action="./.
         '<input type="date" class="form-control" id="dateBirth" placeholder="Дата рождения" name="dateBirth">'+
       '</div>'+
     '</div>'+
-  '<div class="form-group"><label class="control-label col-sm-2" for="pwd" style="color:white;">Фотография:</label>'+
+  '<div class="form-group"><label class="control-label col-sm-2" for="pwd" style="color:white;">Фото:</label>'+
       '<div class="col-sm-10">'+          
         '<input type="file" class="form-control" id="picture" name="picture" onchange="uploadFile()">'+
       '</div>'+
@@ -1162,12 +1164,12 @@ form='<form class="card form-horizontal teacherForm" method="Post" action="'+url
         '<input type="text" class="form-control" id="phone" placeholder="Телефон" name="phone">'+
       '</div>'+
     '</div>'+
-    '<div class="form-group"><label class="control-label col-sm-2" for="position" style="color:white;">Долность:</label>'+
+    '<div class="form-group"><label class="control-label col-sm-2" for="position" style="color:white;">Дата рождения:</label>'+
       '<div class="col-sm-10">'+          
         '<input type="date" class="form-control" id="dateBirth" placeholder="Дата рождения" name="dateBirth">'+
       '</div>'+
     '</div>'+
-  '<div class="form-group"><label class="control-label col-sm-2" for="pwd" style="color:white;">Фотография:</label>'+
+  '<div class="form-group"><label class="control-label col-sm-2" for="pwd" style="color:white;">Фото:</label>'+
       '<div class="col-sm-10">'+          
         '<input type="file" class="form-control" id="picture" name="picture">'+
       '</div>'+

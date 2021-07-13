@@ -49,6 +49,7 @@ class Admin extends CI_Controller {
 			$this->load->view('footer');
 			$session=array('username'=>$this->input->post('email'),'pwd'=>$this->input->post('passwd'));
 			$this->session->set_userdata($session);
+
 		}
 		else{
 			
@@ -522,16 +523,41 @@ class Admin extends CI_Controller {
 		if($this->input->post("teacherScheduleGrade"))
 			$id_grade=$this->input->post("teacherScheduleGrade");
 		
-		if($this->input->post("date1"))
+		/*if($this->input->post("date1")s)
 			$date1=$this->input->post("date1");
 		else
-			$date1=date("Y-m-d", strtotime('monday this week'));
+			$date1=date("Y-m-d", strtotime('monday this week'));*/
 
-		$date2= date("Y-m-d", strtotime('sunday this week'));
 		
-			
+		$date =new DateTime($this->input->post("date1"));
+		$date->modify('Last Monday');
+		$date1=$date->format('Y-m-d');
+
+		//$date1=date("Y-m-d", strtotime('monday this week'));
+		$date1=$date->format('Y-m-d');
+		$date2=new DateTime($this->input->post("date1"));
+		$date2->modify("next friday");
+		$date2=$date2->format('Y-m-d');
+
+		//real monday
+		//echo round((strtotime($date2)-strtotime($this->input->post("date1")))/(60*60*24));
+		if(round((strtotime($this->input->post("date1"))-strtotime($date1))/(60*60*24))==7)
+			$date1=$this->input->post("date1");
+		//real friday
+		if(round((strtotime($date2)-strtotime($this->input->post("date1")))/(60*60*24))==7)
+			$date2=$this->input->post("date1");
+
+		
+
+
+		//echo 'date '.$this->input->post("date1").' monday of date '.$date1. ' friday of date '.$date2;
+		//$date2= date("Y-m-d", strtotime('sunday this week'));
+		
+		//echo json_encode('date1 '.$date1. ' date2 '. $date2. ' monday of week '.date("Y-m-d", strtotime('monday this week')));
 		echo json_encode($this->ModelSchedule->allScheduleInfo($id_grade,$date1,$date2));
 	 }
+
+
 
 	 public function getSubjectToAssign()
 	 {
@@ -549,10 +575,16 @@ class Admin extends CI_Controller {
 		}
 	 }
 
+
+
+
 	 public function Levels()
 	 {
 	 	echo  json_encode($this->ModelGrade->getGrade());
 	 }
+
+
+
 	public function do_upload()
 	{
 		$config = array(
