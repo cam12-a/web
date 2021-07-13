@@ -142,8 +142,9 @@ $(document).ready(function () {
   
   setDate(".currentDate");
   setDate(".dateSchedule");
-  $(".schedule").on('click',function(event){
-      event.preventDefault();
+    getPreSchedule();
+  $(".schedule").on('click',function(){
+      //event.preventDefault();
       clearScheduleTable();
        getPreSchedule();
      console.log($(".currentDate").val())

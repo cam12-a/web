@@ -424,7 +424,7 @@ class Admin extends CI_Controller {
 	 public function UpdateTeacher()
 	 {
 	 	if($this->isSessionSet()){
-	 		$picture=$this->do_upload();
+	 		$picture=@$this->do_upload();
 			
 			$data['title']="Категория";
 			$teacherData=array(
@@ -610,8 +610,8 @@ class Admin extends CI_Controller {
 			//$this->load->view('AdminHomeStudent', $error);
 		}
 		@$this->link='uploads/'.$data['client_name'];
-		$this->returnLink();
-		json_encode($data);
+		@$this->returnLink();
+		@json_encode($data);
 
 	}
 

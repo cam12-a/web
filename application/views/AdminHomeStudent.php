@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <?php echo $client?>
+    
     <?php  foreach($notes as $key) { ?>
           <tr class="editCategory">
           <th scope="row" class="id_student"><?php echo $key->id_student ?></th>
