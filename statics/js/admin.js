@@ -149,14 +149,14 @@ $(document).ready(function () {
      console.log($(".currentDate").val())
      
   });
-  //getPreSchedule();
-//sendDataToSchedulePage();
+ 
    $("#teacherScheduleGrade").on('change',function(){
-  
+     localStorage.setItem( 'gradeID', JSON.stringify($("select[name='teacherScheduleGrade']").val()));
+     $(".gradeID").val(JSON.parse(localStorage.getItem('currentDate')));
     clearScheduleTable();
     getPreSchedule();
-    sendDataToSchedulePage();
-    //location.reload();
+   // sendDataToSchedulePage();
+  
 
   });
 $(".currentDate").on('change',function(){
